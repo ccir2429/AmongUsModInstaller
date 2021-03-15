@@ -13,6 +13,7 @@ The reason might be one of the following:
 - You are missing the "CompatibleMods" json file => download the json again, and put it in the same folder as the app.
 - Your steamapps folder is wrong => try using the settings button in the top left side and change the Steam\steamapps\common\ folder properly.
 - Your internet connection is not stable. either fix it, or try again until it works.
+If you tried all the above and you still get an error, post it as a new issue in the Issues tab here: https://github.com/ccir2429/AmongUsModLauncher/issues 
 # I can't find the Mod 
 The mods will be installed in the Steam\steamapps\common\ folder, It will be created in a Among Us Mods folder. 
 # How to add custom mods to the combobox?
