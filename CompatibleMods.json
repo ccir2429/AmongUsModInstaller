@@ -1,0 +1,40 @@
+[
+  {
+    "name": "Extra Roles",
+    "tag_name": "Latest",
+    "body": "This is a version of the mod that should mostly work on the latest Among Us version. Keep in mind this version of the mod is experimental and could have a lot of bugs.",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "NotHunter101/ExtraRolesAmongUs"
+  },
+  {
+    "name": "Extra.Roles.v.1.3.1-3.5s - custom added version",
+    "tag_name": "v1.3.1(3.5s)",
+    "assets": [
+      {
+        "name": "Extra.Roles.v.1.3.1-3.5s.zip",
+        "browser_download_url": "https://github.com/NotHunter101/ExtraRolesAmongUs/releases/download/v1.3.1%283.5s%29/Extra.Roles.v.1.3.1-3.5s.zip"
+      }
+    ],
+    "body": "This is a version that was added manually. Does not have to be latest.",
+    "is_compatible": true,
+    "is_custom_version": true,
+    "dev_mod": "NotHunter101/ExtraRolesAmongUs"
+  },
+  {
+    "name": "The Other Roles",
+    "tag_name": "Latest",
+    "body": "This is the latest version of The Other Roles Mod. The The Other Roles, is a mod for Amongs Us which currently adds 20 additional roles to the game. Even more roles are coming soon :)",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "Eisbison/TheOtherRoles"
+  },
+  {
+    "name": "Sheriff Mod",
+    "tag_name": "Latest",
+    "body": "Sheriff Mod is an Among Us modification for Windows, which adds a new Crewmate class to the game.",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "Woodi-dev/Among-Us-Sheriff-Mod"
+  }
+]
