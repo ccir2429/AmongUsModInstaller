@@ -63,9 +63,59 @@ namespace AmongUsModLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_exit_enter_leave_door_in_2931189 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_exit-enter-leave-door-in_2931189", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_folder_open_archive_document_archives_3643772 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_folder-open-archive-document-archives_3643772", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_Gear_4200781 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_Gear_4200781", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_gear_setting_set_configure_configuration_3643771 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_gear-setting-set-configure-configuration_3643771", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_import_download_save_2931171 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_import-download-save_2931171", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_play_video_videos_multimedia_media_3643741 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_play-video-videos-multimedia-media_3643741", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

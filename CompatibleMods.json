@@ -1,5 +1,21 @@
 [
   {
+    "name": "The Other Roles",
+    "tag_name": "Latest",
+    "body": "This is the latest version of The Other Roles Mod. The The Other Roles, is a mod for Amongs Us which currently adds over 20 roles to the game. Even more roles are coming soon :)",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "Eisbison/TheOtherRoles"
+  },
+  {
+    "name": "Town Of Impostors",
+    "tag_name": "Latest",
+    "body": "Town Of Impostors Mod is a modification for Among Us - PC/Windows (Steam). This mod aims to add new roles, modifiers & abilities to enhance gameplay, while also providing a full range of options to allow for customising and playing games your way.",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "AJMix/TownOfImpostors"
+  },
+  {
     "name": "Extra Roles",
     "tag_name": "Latest",
     "body": "This is a version of the mod that should mostly work on the latest Among Us version. Keep in mind this version of the mod is experimental and could have a lot of bugs.",
@@ -8,7 +24,15 @@
     "dev_mod": "NotHunter101/ExtraRolesAmongUs"
   },
   {
-    "name": "Extra.Roles.v.1.3.1-3.5s - custom added version",
+    "name": "Sheriff Mod",
+    "tag_name": "Latest",
+    "body": "Sheriff Mod is an Among Us modification for Windows, which adds a new Crewmate class to the game.",
+    "is_compatible": true,
+    "is_custom_version": false,
+    "dev_mod": "Woodi-dev/Among-Us-Sheriff-Mod"
+  },
+  {
+    "name": "Extra.Roles.v.1.3.1-3.5s - Old version",
     "tag_name": "v1.3.1(3.5s)",
     "assets": [
       {
@@ -20,21 +44,5 @@
     "is_compatible": true,
     "is_custom_version": true,
     "dev_mod": "NotHunter101/ExtraRolesAmongUs"
-  },
-  {
-    "name": "The Other Roles",
-    "tag_name": "Latest",
-    "body": "This is the latest version of The Other Roles Mod. The The Other Roles, is a mod for Amongs Us which currently adds 20 additional roles to the game. Even more roles are coming soon :)",
-    "is_compatible": true,
-    "is_custom_version": false,
-    "dev_mod": "Eisbison/TheOtherRoles"
-  },
-  {
-    "name": "Sheriff Mod",
-    "tag_name": "Latest",
-    "body": "Sheriff Mod is an Among Us modification for Windows, which adds a new Crewmate class to the game.",
-    "is_compatible": true,
-    "is_custom_version": false,
-    "dev_mod": "Woodi-dev/Among-Us-Sheriff-Mod"
   }
 ]

@@ -43,8 +43,8 @@ namespace AmongUsModLauncher
                 if (!selectedItem.Is_custom_version)
                 {
                     #region Load_Mod
-                    modReleases = await ModProcessor.LoadModReleases(selectedItem.Dev_mod);
-                    release = modReleases[0];
+                    //modReleases = await ModProcessor.LoadModReleases(selectedItem.Dev_mod);
+                    //release = modReleases[0];
                     #endregion Load_Mod
                 }
 
@@ -127,7 +127,7 @@ namespace AmongUsModLauncher
             // Adding Custom mod capability
             var CustomMod = new ModModel();
             CustomMod.Name = "Add custom mod";
-            CustomMod.Dev_mod = "Streamblox";
+            CustomMod.Dev_mod = "Custom";
             mods.Add(CustomMod);
         }
 

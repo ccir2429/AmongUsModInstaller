@@ -62,6 +62,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AUInstaller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AUInstaller.Designer.cs">
+      <DependentUpon>AUInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AUInstallerLogic.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="InstallMods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +83,9 @@
     <Compile Include="ModProcessor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AUInstaller.resx">
+      <DependentUpon>AUInstaller.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InstallMods.resx">
       <DependentUpon>InstallMods.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +116,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconfinder_Gear_4200781.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_play-video-videos-multimedia-media_3643741.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_gear-setting-set-configure-configuration_3643771.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_folder-open-archive-document-archives_3643772.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_import-download-save_2931171.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconfinder_exit-enter-leave-door-in_2931189.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
