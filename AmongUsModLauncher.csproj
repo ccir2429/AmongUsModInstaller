@@ -68,7 +68,7 @@
     <Compile Include="AUInstaller.Designer.cs">
       <DependentUpon>AUInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="AUInstallerLogic.cs">
+    <Compile Include="AUInstaller.Logic.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="InstallMods.cs">
