@@ -11,6 +11,7 @@ Simply unzip the file and double click on the  AmongUsModLauncher exe.
  - this functionality was disabled, as it was considered obsolette.
 # I get an error when I try to use the app!
 The reason might be one of the following:
+- Your windows defender wrongly detects the app as a risk. simply click on show more info, and then click run anyway.
 - You are missing the "CompatibleMods" json file => download the json again, and put it in the same folder as the app.
 - Your steamapps folder is wrong => try using the settings button in the top left side and change the Steam\steamapps\common\ folder properly.
 - - This will be fixed in future update, so the app knows where steam and among us are installed.
