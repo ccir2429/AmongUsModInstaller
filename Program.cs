@@ -13,7 +13,7 @@ namespace AmongUsModLauncher
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InstallMods());
+            Application.Run(new AUInstallerForm());
         }
     }
 }
