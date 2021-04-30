@@ -41,10 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.pnSettings = new System.Windows.Forms.Panel();
-            this.lblSettings = new System.Windows.Forms.Label();
+            this.lblInfo = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblInfo = new System.Windows.Forms.Label();
+            this.lblSettings = new System.Windows.Forms.Label();
             this.toolBar.SuspendLayout();
             this.pnSettings.SuspendLayout();
             this.SuspendLayout();
@@ -117,6 +117,7 @@
             this.startBtn.TabIndex = 2;
             this.startBtn.UseMnemonic = false;
             this.startBtn.UseVisualStyleBackColor = false;
+            this.startBtn.Visible = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // chkAutoStart
@@ -132,12 +133,14 @@
             // chkShortcut
             // 
             this.chkShortcut.AutoSize = true;
+            this.chkShortcut.Enabled = false;
             this.chkShortcut.Location = new System.Drawing.Point(62, 244);
             this.chkShortcut.Name = "chkShortcut";
             this.chkShortcut.Size = new System.Drawing.Size(197, 25);
             this.chkShortcut.TabIndex = 19;
             this.chkShortcut.Text = "Add shortcut to Desktop";
             this.chkShortcut.UseVisualStyleBackColor = true;
+            this.chkShortcut.Visible = false;
             // 
             // txtModName
             // 
@@ -209,16 +212,14 @@
             this.pnSettings.TabIndex = 25;
             this.pnSettings.Visible = false;
             // 
-            // lblSettings
+            // lblInfo
             // 
-            this.lblSettings.AutoSize = true;
-            this.lblSettings.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSettings.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.lblSettings.Location = new System.Drawing.Point(12, 15);
-            this.lblSettings.Name = "lblSettings";
-            this.lblSettings.Size = new System.Drawing.Size(117, 37);
-            this.lblSettings.TabIndex = 0;
-            this.lblSettings.Text = "Settings";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Location = new System.Drawing.Point(22, 204);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(332, 21);
+            this.lblInfo.TabIndex = 25;
+            this.lblInfo.Text = "* Modify only if you know what you are doing!";
             // 
             // txtPath
             // 
@@ -241,14 +242,16 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "*Path:";
             // 
-            // lblInfo
+            // lblSettings
             // 
-            this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(22, 204);
-            this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(332, 21);
-            this.lblInfo.TabIndex = 25;
-            this.lblInfo.Text = "* Modify only if you know what you are doing!";
+            this.lblSettings.AutoSize = true;
+            this.lblSettings.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSettings.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblSettings.Location = new System.Drawing.Point(12, 15);
+            this.lblSettings.Name = "lblSettings";
+            this.lblSettings.Size = new System.Drawing.Size(117, 37);
+            this.lblSettings.TabIndex = 0;
+            this.lblSettings.Text = "Settings";
             // 
             // AUInstallerForm
             // 

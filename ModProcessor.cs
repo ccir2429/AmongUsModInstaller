@@ -36,7 +36,7 @@ namespace AmongUsModLauncher
             CreateDirIfNotExist(modFolderPath);
 
             // Drop and create the version folder
-            var versionFolderPath = modFolderPath + Version; 
+            var versionFolderPath = modFolderPath + Version+"\\"; 
             DropAndCreate(versionFolderPath);
 
             // Copy among us folder into the version folder
@@ -168,7 +168,7 @@ namespace AmongUsModLauncher
                     string filePath = steamPath.Length > 0 ? steamPath : @"C:\Program Files (x86)\Steam\steamapps\common\" + ModsFolderName;
                     SteamCommPath = filePath;
                     var fileUri = new Uri(zipDownloadUrl);
-                    DownloadedPath = filePath + $"{ModName}_{Version}.zip";
+                    DownloadedPath = filePath + $"{ModName}.zip";
                     client.Headers.Add("Accept: text/html, application/xhtml+xml, */*");
                     client.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
                     client.DownloadFileCompleted += new AsyncCompletedEventHandler(DownloadZip_OnDownloadFileCompleted);
@@ -195,7 +195,7 @@ namespace AmongUsModLauncher
             if (AutoStart)
             {
                 //Process.Start(ModInstalationPath + "Among Us");
-                ProcessStartInfo info = new ProcessStartInfo(ModInstalationPath+"\\Among Us.exe");
+                ProcessStartInfo info = new ProcessStartInfo(ModInstalationPath+"Among Us.exe");
                 Process.Start(info);
             }
             else
