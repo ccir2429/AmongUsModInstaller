@@ -45,6 +45,9 @@
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSettings = new System.Windows.Forms.Label();
+            this.cmbVersion = new System.Windows.Forms.ComboBox();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.toolBar.SuspendLayout();
             this.pnSettings.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,7 @@
             this.toolBar.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolBar.Location = new System.Drawing.Point(0, 0);
             this.toolBar.Name = "toolBar";
-            this.toolBar.Size = new System.Drawing.Size(426, 42);
+            this.toolBar.Size = new System.Drawing.Size(433, 42);
             this.toolBar.TabIndex = 0;
             this.toolBar.DragEnter += new System.Windows.Forms.DragEventHandler(this.toolBar_DragEnter);
             // 
@@ -83,7 +86,7 @@
             this.exitBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.exitBtn.Location = new System.Drawing.Point(390, 3);
+            this.exitBtn.Location = new System.Drawing.Point(397, 3);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(34, 35);
             this.exitBtn.TabIndex = 0;
@@ -97,9 +100,9 @@
             this.cmbMods.BackColor = System.Drawing.Color.WhiteSmoke;
             this.cmbMods.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbMods.FormattingEnabled = true;
-            this.cmbMods.Location = new System.Drawing.Point(12, 59);
+            this.cmbMods.Location = new System.Drawing.Point(29, 59);
             this.cmbMods.Name = "cmbMods";
-            this.cmbMods.Size = new System.Drawing.Size(402, 29);
+            this.cmbMods.Size = new System.Drawing.Size(385, 29);
             this.cmbMods.TabIndex = 17;
             this.cmbMods.SelectedIndexChanged += new System.EventHandler(this.cmbMods_SelectedIndexChanged);
             // 
@@ -111,9 +114,9 @@
             this.startBtn.Enabled = false;
             this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.startBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.startBtn.Location = new System.Drawing.Point(376, 229);
+            this.startBtn.Location = new System.Drawing.Point(343, 262);
             this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(41, 40);
+            this.startBtn.Size = new System.Drawing.Size(57, 55);
             this.startBtn.TabIndex = 2;
             this.startBtn.UseMnemonic = false;
             this.startBtn.UseVisualStyleBackColor = false;
@@ -123,7 +126,7 @@
             // chkAutoStart
             // 
             this.chkAutoStart.AutoSize = true;
-            this.chkAutoStart.Location = new System.Drawing.Point(62, 211);
+            this.chkAutoStart.Location = new System.Drawing.Point(62, 258);
             this.chkAutoStart.Name = "chkAutoStart";
             this.chkAutoStart.Size = new System.Drawing.Size(186, 25);
             this.chkAutoStart.TabIndex = 18;
@@ -134,7 +137,7 @@
             // 
             this.chkShortcut.AutoSize = true;
             this.chkShortcut.Enabled = false;
-            this.chkShortcut.Location = new System.Drawing.Point(62, 244);
+            this.chkShortcut.Location = new System.Drawing.Point(62, 291);
             this.chkShortcut.Name = "chkShortcut";
             this.chkShortcut.Size = new System.Drawing.Size(197, 25);
             this.chkShortcut.TabIndex = 19;
@@ -147,7 +150,7 @@
             this.txtModName.BackColor = System.Drawing.SystemColors.Control;
             this.txtModName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtModName.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.txtModName.Location = new System.Drawing.Point(158, 157);
+            this.txtModName.Location = new System.Drawing.Point(158, 204);
             this.txtModName.Name = "txtModName";
             this.txtModName.ReadOnly = true;
             this.txtModName.Size = new System.Drawing.Size(256, 22);
@@ -158,7 +161,7 @@
             this.txtDev.BackColor = System.Drawing.SystemColors.Control;
             this.txtDev.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDev.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.txtDev.Location = new System.Drawing.Point(158, 106);
+            this.txtDev.Location = new System.Drawing.Point(158, 153);
             this.txtDev.Name = "txtDev";
             this.txtDev.ReadOnly = true;
             this.txtDev.Size = new System.Drawing.Size(256, 22);
@@ -168,7 +171,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.label1.Location = new System.Drawing.Point(25, 106);
+            this.label1.Location = new System.Drawing.Point(25, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 21);
             this.label1.TabIndex = 22;
@@ -178,7 +181,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.label2.Location = new System.Drawing.Point(25, 157);
+            this.label2.Location = new System.Drawing.Point(25, 204);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 21);
             this.label2.TabIndex = 23;
@@ -191,9 +194,9 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(326, 229);
+            this.button1.Location = new System.Drawing.Point(280, 263);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(41, 40);
+            this.button1.Size = new System.Drawing.Size(57, 53);
             this.button1.TabIndex = 24;
             this.button1.UseMnemonic = false;
             this.button1.UseVisualStyleBackColor = false;
@@ -206,7 +209,7 @@
             this.pnSettings.Controls.Add(this.txtPath);
             this.pnSettings.Controls.Add(this.label3);
             this.pnSettings.Controls.Add(this.lblSettings);
-            this.pnSettings.Location = new System.Drawing.Point(420, 48);
+            this.pnSettings.Location = new System.Drawing.Point(423, 48);
             this.pnSettings.Name = "pnSettings";
             this.pnSettings.Size = new System.Drawing.Size(426, 254);
             this.pnSettings.TabIndex = 25;
@@ -253,11 +256,46 @@
             this.lblSettings.TabIndex = 0;
             this.lblSettings.Text = "Settings";
             // 
+            // cmbVersion
+            // 
+            this.cmbVersion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.cmbVersion.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVersion.FormattingEnabled = true;
+            this.cmbVersion.Location = new System.Drawing.Point(158, 104);
+            this.cmbVersion.Name = "cmbVersion";
+            this.cmbVersion.Size = new System.Drawing.Size(256, 29);
+            this.cmbVersion.TabIndex = 26;
+            this.cmbVersion.SelectedIndexChanged += new System.EventHandler(this.cmbVersion_SelectedIndexChanged);
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
+            this.lblVersion.Location = new System.Drawing.Point(25, 107);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(65, 21);
+            this.lblVersion.TabIndex = 27;
+            this.lblVersion.Text = "Version:";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.progressBar1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.progressBar1.Location = new System.Drawing.Point(29, 348);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(385, 23);
+            this.progressBar1.Step = 20;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 28;
+            // 
             // AUInstallerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(426, 295);
+            this.ClientSize = new System.Drawing.Size(433, 383);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.lblVersion);
+            this.Controls.Add(this.cmbVersion);
             this.Controls.Add(this.pnSettings);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtModName);
@@ -303,5 +341,8 @@
         private System.Windows.Forms.Label lblInfo;
         private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cmbVersion;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

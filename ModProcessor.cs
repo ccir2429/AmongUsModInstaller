@@ -128,7 +128,7 @@ namespace AmongUsModLauncher
             }
         }
         public static string DownloadedPath { get; private set; } = string.Empty;
-        private static string SteamCommPath;
+        public static string SteamCommPath;
         public static bool DownloadModRelease(string zipDownloadUrl, string fileName, string steamPath)
         {
             using (var client = new WebClient())
@@ -209,7 +209,36 @@ namespace AmongUsModLauncher
             Processing = false;
         }
 
+        public static List<ModModel> InstalledVersions = new List<ModModel>();
 
+        public static bool CheckFolderExists(string folderPath = default)
+        {
+            string modsFolderPath = $"{ SteamCommPath }\\{ModsFolderName}\\";
+            if (folderPath != null)
+                modsFolderPath += $"{folderPath}\\";
+            DirectoryInfo dir = new DirectoryInfo(modsFolderPath);
+            return dir.Exists;
+        }
+
+        public static List<ModModel> GetInstalledVersions(string modName)
+        {
+            List<ModModel> versions = new List<ModModel>();
+            string versionsFolderPath = $"{ SteamCommPath }\\{ModsFolderName}\\{modName}\\";
+            DirectoryInfo dir = new DirectoryInfo(versionsFolderPath);
+
+            List<DirectoryInfo> versionDirs = dir.GetDirectories().ToList();
+
+            foreach(var versionDir in versionDirs)
+            {
+                versions.Add(new ModModel
+                {
+                    Name = modName,
+                    Tag_name = versionDir.Name
+                });
+            }
+
+            return versions;
+        }
 
         
     }
