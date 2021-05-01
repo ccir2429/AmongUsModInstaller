@@ -21,33 +21,40 @@ namespace AmongUsModLauncher
         {
             CreateGameCopy($"{Version}");
         }
-
+        public static int InstallProgress = 0;
         private static string ModInstalationPath = string.Empty;
         private static void CreateGameCopy(string folderName)
         {
             string modsFolderPath = $"{ SteamCommPath }\\{ModsFolderName}\\";
             #region init_All_Mods_folder
             CreateDirIfNotExist(modsFolderPath);
+            InstallProgress += 10;
             #endregion init_All_Mods_folder
-
             #region CopyAmongUs
             // Create Mod folder if it doesn't exist
             var modFolderPath = modsFolderPath +$"{ModName}\\";
             CreateDirIfNotExist(modFolderPath);
+            InstallProgress += 10;
 
             // Drop and create the version folder
             var versionFolderPath = modFolderPath + Version+"\\"; 
             DropAndCreate(versionFolderPath);
+            InstallProgress += 10;
 
             // Copy among us folder into the version folder
             DirectoryCopy(SteamCommPath + "Among Us", versionFolderPath, true);
             ModInstalationPath = versionFolderPath;
+            InstallProgress += 20;
             #endregion
 
             // UnzipArchive
             ZipFile.ExtractToDirectory(DownloadedPath, ModInstalationPath);
+            InstallProgress += 20;
+
             if (File.Exists(DownloadedPath))
                 File.Delete(DownloadedPath);
+            InstallProgress += 15;
+
         }
 
         private static void CreateDirIfNotExist(string folderPath)
@@ -135,6 +142,7 @@ namespace AmongUsModLauncher
             {
                 try
                 {
+                    InstallProgress += 10;
                     steamPath.Concat(ModsFolderName);
                     string filePath = steamPath.Length > 0 ? steamPath : @"C:\Program Files (x86)\Steam\steamapps\common\" + ModsFolderName;
                     SteamCommPath = filePath;
@@ -191,7 +199,9 @@ namespace AmongUsModLauncher
         public static bool AddShortcut = false;
         public static void DownloadZip_OnDownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
         {
+            InstallProgress += 10;
             InstallLatestRelease();
+            InstallProgress = 100;
             if (AutoStart)
             {
                 //Process.Start(ModInstalationPath + "Among Us");

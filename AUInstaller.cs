@@ -95,20 +95,27 @@ namespace AmongUsModLauncher
             var selectedMod = (ModModel)cmbMods.SelectedItem;
             try
             {
+                StartProgressBar();
                 await Task.Run(() => GetModReleaseFromGit(selectedMod));
+                progressBar1.Visible = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "There was an error while trying to install the mod.");
             }
+        }
 
+        private void StartProgressBar()
+        {
+            ModProcessor.InstallProgress = 0;
+            progressBar1.Visible = true;
+            timer1.Start();
         }
 
         private void cmbMods_SelectedIndexChanged(object sender, EventArgs e)
         {
             var selectedMod = (ModModel)cmbMods.SelectedItem;
             this.txtDev.Text = selectedMod.Dev_mod;
-            this.txtModName.Text = $"{selectedMod.Name} - {selectedMod.Tag_name}";
 
             ModProcessor.InstalledVersions = GetInstallsForMod(selectedMod.Name);
             ModProcessor.InstalledVersions.Add(new ModModel { Name = selectedMod.Name, Tag_name = "Latest" });
@@ -131,13 +138,16 @@ namespace AmongUsModLauncher
 
         private void cmbVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selectedItem = (ModModel)cmbVersion.SelectedItem;
-            if (selectedItem.Tag_name.ToLower().Equals("latest"))
+            var selectedVersion = (ModModel)cmbVersion.SelectedItem;
+            var selectedMod = (ModModel)cmbMods.SelectedItem;
+            txtModName.Text = $"{selectedMod.Name} - {selectedVersion.Tag_name}";
+            if (selectedVersion.Tag_name.ToLower().Equals("latest"))
             {
                 this.button1.Enabled = true;
                 this.button1.Visible = true;
                 this.startBtn.Enabled = false;
                 this.startBtn.Visible = false;
+                chkAutoStart.Visible = true;
             }
             else
             {
@@ -145,7 +155,13 @@ namespace AmongUsModLauncher
                 this.button1.Visible = false;
                 this.startBtn.Enabled = true;
                 this.startBtn.Visible = true;
+                chkAutoStart.Visible = false;
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            progressBar1.Value = ModProcessor.InstallProgress;
         }
     }
 }
