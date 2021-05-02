@@ -8,6 +8,14 @@ namespace AmongUsModLauncher
 {
     partial class AUInstallerForm
     {
+
+        private async void LoadAppVersion()
+        {
+            var release = await ModProcessor.LoadLatestModRelease("ccir2429/AmongUsModInstaller");
+            string tag = release.Tag_name;
+            tag = tag.Equals(AppVersion) ? ($"{tag} - Latest") : ($"{tag} \n Consider updating to latest version!");
+            this.lblAppVerTag.Text = tag;
+        }
         private async Task GetModReleaseFromGit(ModModel mod)
         {
             List<ModModel> modReleases;
@@ -20,7 +28,7 @@ namespace AmongUsModLauncher
                 ModModel release = mod;
                 if (!mod.Is_custom_version)
                 {
-                    release = await ModProcessor.LoadModReleases(mod.Dev_mod);
+                    release = await ModProcessor.LoadLatestModRelease(mod.Dev_mod);
                     release.Name = mod.Name;
                 }
 

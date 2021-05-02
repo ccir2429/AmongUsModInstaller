@@ -63,6 +63,16 @@ namespace AmongUsModLauncher.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap iconfinder_941_07_4619675 {
+            get {
+                object obj = ResourceManager.GetObject("iconfinder_941-07_4619675", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iconfinder_exit_enter_leave_door_in_2931189 {
             get {
                 object obj = ResourceManager.GetObject("iconfinder_exit-enter-leave-door-in_2931189", resourceCulture);

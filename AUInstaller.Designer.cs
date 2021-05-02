@@ -33,23 +33,26 @@
             this.settingsBtn = new System.Windows.Forms.Button();
             this.exitBtn = new System.Windows.Forms.Button();
             this.cmbMods = new System.Windows.Forms.ComboBox();
-            this.startBtn = new System.Windows.Forms.Button();
             this.chkAutoStart = new System.Windows.Forms.CheckBox();
             this.chkShortcut = new System.Windows.Forms.CheckBox();
             this.txtModName = new System.Windows.Forms.TextBox();
             this.txtDev = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.cmbVersion = new System.Windows.Forms.ComboBox();
             this.lblVersion = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.pnSettings = new System.Windows.Forms.Panel();
+            this.lblAuIVer = new System.Windows.Forms.Label();
+            this.lblAppVerTag = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.lblInfo = new System.Windows.Forms.Label();
             this.txtPath = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblSettings = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.downloadBtn = new System.Windows.Forms.Button();
+            this.startBtn = new System.Windows.Forms.Button();
             this.toolBar.SuspendLayout();
             this.pnSettings.SuspendLayout();
             this.SuspendLayout();
@@ -71,7 +74,7 @@
             this.settingsBtn.BackColor = System.Drawing.Color.WhiteSmoke;
             this.settingsBtn.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_gear_setting_set_configure_configuration_3643771;
             this.settingsBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.settingsBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.settingsBtn.Location = new System.Drawing.Point(3, 3);
             this.settingsBtn.Name = "settingsBtn";
@@ -107,23 +110,6 @@
             this.cmbMods.Size = new System.Drawing.Size(385, 29);
             this.cmbMods.TabIndex = 17;
             this.cmbMods.SelectedIndexChanged += new System.EventHandler(this.cmbMods_SelectedIndexChanged);
-            // 
-            // startBtn
-            // 
-            this.startBtn.BackColor = System.Drawing.SystemColors.Window;
-            this.startBtn.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_play_video_videos_multimedia_media_3643741;
-            this.startBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.startBtn.Enabled = false;
-            this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.startBtn.ForeColor = System.Drawing.SystemColors.Window;
-            this.startBtn.Location = new System.Drawing.Point(343, 262);
-            this.startBtn.Name = "startBtn";
-            this.startBtn.Size = new System.Drawing.Size(57, 55);
-            this.startBtn.TabIndex = 2;
-            this.startBtn.UseMnemonic = false;
-            this.startBtn.UseVisualStyleBackColor = false;
-            this.startBtn.Visible = false;
-            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // chkAutoStart
             // 
@@ -189,21 +175,6 @@
             this.label2.TabIndex = 23;
             this.label2.Text = "Mod name:";
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.SystemColors.Window;
-            this.button1.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_import_download_save_2931171;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.SystemColors.Window;
-            this.button1.Location = new System.Drawing.Point(280, 263);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(57, 53);
-            this.button1.TabIndex = 24;
-            this.button1.UseMnemonic = false;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.DownloadBtn_Click);
-            // 
             // cmbVersion
             // 
             this.cmbVersion.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -239,20 +210,59 @@
             // pnSettings
             // 
             this.pnSettings.BackColor = System.Drawing.SystemColors.Window;
+            this.pnSettings.Controls.Add(this.lblAuIVer);
+            this.pnSettings.Controls.Add(this.lblAppVerTag);
+            this.pnSettings.Controls.Add(this.button2);
             this.pnSettings.Controls.Add(this.lblInfo);
             this.pnSettings.Controls.Add(this.txtPath);
             this.pnSettings.Controls.Add(this.label3);
             this.pnSettings.Controls.Add(this.lblSettings);
-            this.pnSettings.Location = new System.Drawing.Point(420, 63);
+            this.pnSettings.Location = new System.Drawing.Point(420, 59);
             this.pnSettings.Name = "pnSettings";
             this.pnSettings.Size = new System.Drawing.Size(426, 254);
             this.pnSettings.TabIndex = 29;
             this.pnSettings.Visible = false;
             // 
+            // lblAuIVer
+            // 
+            this.lblAuIVer.AutoSize = true;
+            this.lblAuIVer.Font = new System.Drawing.Font("Yu Gothic UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAuIVer.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
+            this.lblAuIVer.Location = new System.Drawing.Point(21, 11);
+            this.lblAuIVer.Name = "lblAuIVer";
+            this.lblAuIVer.Size = new System.Drawing.Size(119, 25);
+            this.lblAuIVer.TabIndex = 28;
+            this.lblAuIVer.Text = "App version:";
+            // 
+            // lblAppVerTag
+            // 
+            this.lblAppVerTag.AutoSize = true;
+            this.lblAppVerTag.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
+            this.lblAppVerTag.Location = new System.Drawing.Point(146, 14);
+            this.lblAppVerTag.Name = "lblAppVerTag";
+            this.lblAppVerTag.Size = new System.Drawing.Size(101, 21);
+            this.lblAppVerTag.TabIndex = 27;
+            this.lblAppVerTag.Text = "vPlaceHolder";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.Window;
+            this.button2.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_941_07_4619675;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Black;
+            this.button2.Location = new System.Drawing.Point(391, 97);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(34, 33);
+            this.button2.TabIndex = 2;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // lblInfo
             // 
+            this.lblInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(22, 204);
+            this.lblInfo.Location = new System.Drawing.Point(22, 210);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(332, 21);
             this.lblInfo.TabIndex = 25;
@@ -263,17 +273,18 @@
             this.txtPath.BackColor = System.Drawing.SystemColors.Control;
             this.txtPath.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPath.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(79, 75);
+            this.txtPath.Location = new System.Drawing.Point(86, 103);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(335, 21);
+            this.txtPath.Size = new System.Drawing.Size(295, 21);
             this.txtPath.TabIndex = 23;
             this.txtPath.TabStop = false;
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
-            this.label3.Location = new System.Drawing.Point(22, 75);
+            this.label3.Location = new System.Drawing.Point(29, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 21);
             this.label3.TabIndex = 24;
@@ -284,7 +295,7 @@
             this.lblSettings.AutoSize = true;
             this.lblSettings.Font = new System.Drawing.Font("Yu Gothic UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSettings.ForeColor = System.Drawing.SystemColors.InactiveCaptionText;
-            this.lblSettings.Location = new System.Drawing.Point(12, 15);
+            this.lblSettings.Location = new System.Drawing.Point(19, 43);
             this.lblSettings.Name = "lblSettings";
             this.lblSettings.Size = new System.Drawing.Size(117, 37);
             this.lblSettings.TabIndex = 0;
@@ -293,6 +304,38 @@
             // timer1
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // downloadBtn
+            // 
+            this.downloadBtn.BackColor = System.Drawing.SystemColors.Window;
+            this.downloadBtn.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_import_download_save_2931171;
+            this.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.downloadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.downloadBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.downloadBtn.Location = new System.Drawing.Point(280, 263);
+            this.downloadBtn.Name = "downloadBtn";
+            this.downloadBtn.Size = new System.Drawing.Size(57, 53);
+            this.downloadBtn.TabIndex = 24;
+            this.downloadBtn.UseMnemonic = false;
+            this.downloadBtn.UseVisualStyleBackColor = false;
+            this.downloadBtn.Click += new System.EventHandler(this.DownloadBtn_Click);
+            // 
+            // startBtn
+            // 
+            this.startBtn.BackColor = System.Drawing.SystemColors.Window;
+            this.startBtn.BackgroundImage = global::AmongUsModLauncher.Properties.Resources.iconfinder_play_video_videos_multimedia_media_3643741;
+            this.startBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.startBtn.Enabled = false;
+            this.startBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.startBtn.ForeColor = System.Drawing.SystemColors.Window;
+            this.startBtn.Location = new System.Drawing.Point(343, 262);
+            this.startBtn.Name = "startBtn";
+            this.startBtn.Size = new System.Drawing.Size(57, 55);
+            this.startBtn.TabIndex = 2;
+            this.startBtn.UseMnemonic = false;
+            this.startBtn.UseVisualStyleBackColor = false;
+            this.startBtn.Visible = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // AUInstallerForm
             // 
@@ -303,7 +346,7 @@
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.cmbVersion);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.downloadBtn);
             this.Controls.Add(this.txtModName);
             this.Controls.Add(this.txtDev);
             this.Controls.Add(this.label1);
@@ -341,7 +384,7 @@
         private System.Windows.Forms.TextBox txtDev;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button downloadBtn;
         private System.Windows.Forms.ComboBox cmbVersion;
         private System.Windows.Forms.Label lblVersion;
         private System.Windows.Forms.Panel pnSettings;
@@ -351,5 +394,8 @@
         private System.Windows.Forms.Label lblSettings;
         public System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblAuIVer;
+        private System.Windows.Forms.Label lblAppVerTag;
     }
 }

@@ -117,7 +117,7 @@ namespace AmongUsModLauncher
 
         public static string ModName { get; set; }
         public static string Version { get; set; }
-        public static async Task<ModModel> LoadModReleases(string dev_modName)
+        public static async Task<ModModel> LoadLatestModRelease(string dev_modName)
         {
             string url = $"http://api.github.com/repos/{ dev_modName }/releases";
             using (HttpResponseMessage response = await ApiHelper.ApiClient.GetAsync(url))
@@ -193,6 +193,14 @@ namespace AmongUsModLauncher
                     client.Dispose();
                 }
             }
+        }
+
+        internal static async Task<bool> IsLatestInstalled(string dev_mod)
+        {
+            var release = await LoadLatestModRelease(dev_mod);
+            var latestTag = release.Tag_name;
+            return (InstalledVersions.Any(x => x.Tag_name.ToLower().Equals(latestTag.ToLower())));
+                
         }
 
         public static bool AutoStart = false;
