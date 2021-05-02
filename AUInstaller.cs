@@ -71,7 +71,7 @@ namespace AmongUsModLauncher
         {
             var installPath = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Valve\\Steam", false).GetValue("InstallPath");
             if (installPath != null && !installPath.Equals(string.Empty))
-                SteamCommonsPath = installPath + "\\steamapps\\common";
+                SteamCommonsPath = installPath + "\\steamapps\\common\\";
 
             this.txtPath.Text = SteamCommonsPath;
         }
