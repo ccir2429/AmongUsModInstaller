@@ -11,7 +11,7 @@ Simply unzip the file and double click on the  AUInstaller application file.
 ## Install a custom mod 
  - This functionality was disabled, as it was considered obsolette.
 ## Start modded among us
- - If you already have a mod installed, you only need to select it from the versions combo box, and click the play button.
+ - If you already have a mod installed, you only need to select the version you want to play from the versions combo box, and click the play button.
 # I get an error when I try to use the app!
 The reason might be one of the following:
 - Your windows defender wrongly detects the app as a risk. simply click on show more info, and then click run anyway.
