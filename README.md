@@ -1,5 +1,5 @@
 # How to install?
-Download the zip file from latest release or from [here](https://github.com/ccir2429/AmongUsModInstaller/releases/download/v1.2.3/AUModInstaller v1.2.3.zip)
+Download the zip file from latest release or from [here](https://github.com/ccir2429/AmongUsModInstaller/releases/download/v1.2.3/AUModInstaller.v1.2.3.zip)
 
 Simply unzip the file and double click on the  AmongUsModLauncher exe.
 # How to install a mod?
