@@ -13,7 +13,7 @@ namespace AmongUsModLauncher
 {
     public partial class AUInstallerForm : Form
     {
-        public const string AppVersion = "v1.2.2";
+        public const string AppVersion = "v1.2.3";
         private string SteamCommonsPath = @"C:\Program Files (x86)\Steam\steamapps\common\";
         private List<ModModel> mods = new List<ModModel>();
         public AUInstallerForm()
@@ -32,6 +32,14 @@ namespace AmongUsModLauncher
             cmbVersion.ValueMember = "Tag_name";
             cmbVersion.DisplayMember = "Tag_name";
             ModProcessor.SteamCommPath = SteamCommonsPath;
+
+            InitAppLocalMachineKey();
+        }
+
+        private const  string SoftwarePath = "SOFTWARE\\Wow6432Node\\";
+        private void InitAppLocalMachineKey()
+        {
+            WriteToLocalMachine(SoftwarePath, "installPath", "Test123");
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -63,17 +71,37 @@ namespace AmongUsModLauncher
             cmbMods.DisplayMember = "Name";
             cmbMods.ValueMember = "Dev_mod";
             var selected = (ModModel)cmbMods.SelectedItem;
-            SetSteamPathFromRegistry();
+            SetValuesFromRegistry();
         }
 
-
-        private void SetSteamPathFromRegistry()
+        private object GetValueFromLocalMachine(string subKey, string key)
         {
-            var installPath = Registry.LocalMachine.OpenSubKey("SOFTWARE\\Wow6432Node\\Valve\\Steam", false).GetValue("InstallPath");
+            return Registry.LocalMachine.OpenSubKey(subKey, false).GetValue(key);
+        }
+
+        private void WriteToLocalMachine(string subKey, string key, object value)
+        {
+            string AppSubKeyName = "AUInstaller";
+            var localSubKey = Registry.LocalMachine.OpenSubKey(subKey, true);
+            var regKey= localSubKey.OpenSubKey(AppSubKeyName,true);
+            if(regKey == null)
+            {
+                regKey = localSubKey.CreateSubKey(AppSubKeyName, true);
+            }
+            regKey.SetValue(key, value);
+        }
+
+        private void SetValuesFromRegistry()
+        {
+            #region steamCommonPath
+            var installPath = GetValueFromLocalMachine("SOFTWARE\\Wow6432Node\\Valve\\Steam", "InstallPath");
             if (installPath != null && !installPath.Equals(string.Empty))
                 SteamCommonsPath = installPath + "\\steamapps\\common\\";
-
             this.txtPath.Text = SteamCommonsPath;
+            #endregion
+            #region AppSettings
+            lblAppSettings.Text = (string)GetValueFromLocalMachine(SoftwarePath+ "\\AUInstaller", "installPath");
+            #endregion
         }
 
         private void LoadCompatibleMods()
@@ -87,11 +115,6 @@ namespace AmongUsModLauncher
             var modsFromFile = JsonConvert.DeserializeObject<List<ModModel>>(jsonFromFile);
             mods.AddRange(modsFromFile);
             #endregion 
-            // Adding Custom mod capability
-            //var CustomMod = new ModModel();
-            //CustomMod.Name = "Add custom mod";
-            //CustomMod.Dev_mod = "Custom";
-            //mods.Add(CustomMod);
         }
 
         Point crtPosOffset = new Point(0, 0);
@@ -206,7 +229,7 @@ namespace AmongUsModLauncher
 
         private void button2_Click(object sender, EventArgs e)
         {
-            SetSteamPathFromRegistry();
+            SetValuesFromRegistry();
         }
     }
 }

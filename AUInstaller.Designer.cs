@@ -53,6 +53,7 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.downloadBtn = new System.Windows.Forms.Button();
             this.startBtn = new System.Windows.Forms.Button();
+            this.lblAppSettings = new System.Windows.Forms.Label();
             this.toolBar.SuspendLayout();
             this.pnSettings.SuspendLayout();
             this.SuspendLayout();
@@ -210,6 +211,7 @@
             // pnSettings
             // 
             this.pnSettings.BackColor = System.Drawing.SystemColors.Window;
+            this.pnSettings.Controls.Add(this.lblAppSettings);
             this.pnSettings.Controls.Add(this.lblAuIVer);
             this.pnSettings.Controls.Add(this.lblAppVerTag);
             this.pnSettings.Controls.Add(this.button2);
@@ -217,7 +219,7 @@
             this.pnSettings.Controls.Add(this.txtPath);
             this.pnSettings.Controls.Add(this.label3);
             this.pnSettings.Controls.Add(this.lblSettings);
-            this.pnSettings.Location = new System.Drawing.Point(420, 59);
+            this.pnSettings.Location = new System.Drawing.Point(420, 63);
             this.pnSettings.Name = "pnSettings";
             this.pnSettings.Size = new System.Drawing.Size(426, 254);
             this.pnSettings.TabIndex = 29;
@@ -337,6 +339,16 @@
             this.startBtn.Visible = false;
             this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
+            // lblAppSettings
+            // 
+            this.lblAppSettings.AutoSize = true;
+            this.lblAppSettings.Font = new System.Drawing.Font("Yu Gothic UI", 12F);
+            this.lblAppSettings.Location = new System.Drawing.Point(29, 161);
+            this.lblAppSettings.Name = "lblAppSettings";
+            this.lblAppSettings.Size = new System.Drawing.Size(107, 21);
+            this.lblAppSettings.TabIndex = 29;
+            this.lblAppSettings.Text = "APPSETTINGS";
+            // 
             // AUInstallerForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -397,5 +409,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label lblAuIVer;
         private System.Windows.Forms.Label lblAppVerTag;
+        private System.Windows.Forms.Label lblAppSettings;
     }
 }
