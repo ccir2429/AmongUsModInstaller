@@ -1,14 +1,17 @@
 # How to install?
 Download the zip file from latest release or from [here](https://github.com/ccir2429/AmongUsModInstaller/releases/download/v1.2.3/AUModInstaller.v1.2.3.zip)
 
-Simply unzip the file and double click on the  AmongUsModLauncher exe.
-# How to install a mod?
+Simply unzip the file and double click on the  AUInstaller application file.
+# Hoe to use the app?
 ## Install from a list of compatible mods
 1. Select a mod from the combo box
+2. Select mod version (default is Latest)
 2. Click the download button.
-3. * optionally you can check the "Start game after install" checkbox. now you just have to wait for the instalation to finish, and the game automatically starts.
+3. Optionally you can check the "Start game after install" checkbox. Now you just have to wait for the instalation to finish, and the game automatically starts.
 ## Install a custom mod 
- - this functionality was disabled, as it was considered obsolette.
+ - This functionality was disabled, as it was considered obsolette.
+## Start modded among us
+ - If you already have a mod installed, you only need to select it from the versions combo box, and click the play button.
 # I get an error when I try to use the app!
 The reason might be one of the following:
 - Your windows defender wrongly detects the app as a risk. simply click on show more info, and then click run anyway.
