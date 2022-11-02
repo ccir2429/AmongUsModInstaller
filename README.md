@@ -1,3 +1,6 @@
+NOTE: This app will no longer be developed. It works good enough to solve my problem, and it has not been used by anyone else(from my knowledge).
+If you ever ned any help installing a mod, I'd recommend asking in the official discord server of the mod you're trying to install.
+
 # How to install?
 Download the zip file from latest release or from [here](https://github.com/ccir2429/AmongUsModInstaller/releases/download/v1.2.3/AUModInstaller.v1.2.3.zip)
 
